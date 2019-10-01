@@ -33,5 +33,5 @@ it('should give the correct date', () => {
 });
 
 it('should give the hood', () => {
-    expect(listings[0].title).toBe('(San Francisco)');
+    expect(listings[0].title).toBe('');
 });
