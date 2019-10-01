@@ -9,7 +9,9 @@ exports.listings = (html) => {
         const title = titleElement.text();
         const url = titleElement.attr('href');
         const hood = $(element).find('.resutl-hood').text().trim();
-        return { title, url }
+        const datePosted = new Date($(element).find('.result-date').attr('datetime'));
+        console.log(hood);
+        return { title, url, hood, datePosted }
     }).get();
 
 }

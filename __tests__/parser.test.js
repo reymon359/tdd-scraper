@@ -29,9 +29,9 @@ it('should give the correct title', () => {
 });
 
 it('should give the correct date', () => {
-    expect(listings[0].title).toBe(new Date('2019-09-30 16:53'));
+    expect(listings[0].datePosted).toStrictEqual(new Date('2019-09-30 16:53'));
 });
 
 it('should give the hood', () => {
-    expect(listings[0].title).toBe('');
+    expect(listings[0].hood).toBe('');
 });
