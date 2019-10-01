@@ -1,5 +1,17 @@
 const cheerio = require('cheerio');
 
+function getDatePosted($, element) {
+    return new Date(
+        $(element)
+        .find('.result-date')
+        .attr('datetime')
+    );
+}
+
+function getHood($, element) {
+    $(element).find('.result-hood').text().trim();
+}
+
 exports.listings = (html) => {
 
     const $ = cheerio.load(html);
@@ -8,9 +20,8 @@ exports.listings = (html) => {
         const titleElement = $(element).find('.result-title.hdrlnk');
         const title = titleElement.text();
         const url = titleElement.attr('href');
-        const hood = $(element).find('.resutl-hood').text().trim();
-        const datePosted = new Date($(element).find('.result-date').attr('datetime'));
-        console.log(hood);
+        const hood = getHood($, element);
+        const datePosted = getDatePosted($, element);
         return { title, url, hood, datePosted }
     }).get();
 
