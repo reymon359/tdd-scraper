@@ -13,7 +13,7 @@ function saveHtmlToFile(html) {
 
 async function main() {
 
-    const html = await getHtml('https://google.com');
+    const html = await getHtml('https://craiglist.com');
     saveHtmlToFile(html);
 }
 
